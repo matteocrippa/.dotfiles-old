@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PKG=(
+export LIGHT=(
   # drivers
   acpi
   numlockx
@@ -33,10 +33,6 @@ export PKG=(
   # apps x
   firefox
   clipit
-  android-studio
-  intellij-idea-ultimate-edition
-  docker
-  kitematic
   enpass-bin
   mailspring
   tusk
@@ -44,17 +40,13 @@ export PKG=(
   charles
   insomnia
   vlc
-  wireshark-qt
-  franz
   arandr
   pcmanfm
   deja-dup
-  manjaro-settings-manager
-  manjaro-settings-samba
+  #manjaro-settings-manager
+  #manjaro-settings-samba
   kapow
   system-config-samba
-  inkscape
-  gimp
   gufw
   pdfsam
 
@@ -87,8 +79,20 @@ export PKG=(
   xscreensaver
 
   # coding
-  python
-  python-pip
   nodejs
-  flutter
+)
+
+export FULL=(
+
+    # apps
+    gimp
+    wireshark-qt
+    inkscape
+    android-studio
+    intellij-idea-ultimate-edition
+    docker
+    kitematic
+
+    # coding
+    flutter
 )
