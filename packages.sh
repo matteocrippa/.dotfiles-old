@@ -44,9 +44,7 @@ export LIGHT=(
   pcmanfm
   deja-dup
   #manjaro-settings-manager
-  #manjaro-settings-samba
   kapow
-  system-config-samba
   gufw
   pdfsam
 
