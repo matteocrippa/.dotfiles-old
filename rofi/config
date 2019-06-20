@@ -1,0 +1,13 @@
+! Rofi config file
+rofi.theme: ~/.dotfiles/rofi/themes/oxide.rafi
+rofi.modi:           drun,window,run,calc
+rofi.combi-modi:     drun,window
+rofi.display-window: Window
+rofi.display-drun:   Search
+rofi.show-icons:     true
+rofi.font:           Hack NF 18
+rofi.lines:          4
+rofi.m: -4
+rofi.sidebar-mode: true
+rofi.run-command: /bin/bash -i -c '{cmd}'
+rofi.run-list-command: source ~/.config/rofi/aliases.sh

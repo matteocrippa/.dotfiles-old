@@ -6,18 +6,6 @@
 # force update all
 yay -Syyu
 
-# install apps
-while true; do
-    read -p 'do you want to make "full" or "light" install?' fl
-
-    case $fl in
-        [fullFull]* ) light; full; break;;
-        [lightLight]* ) light; break;;
-        * ) echo 'Please answer full or light';;
-    esac
-done
-
-
 # light install
 light() {
     for pkg in "${LIGHT[@]}"; do
@@ -34,14 +22,15 @@ full() {
     done
 }
 
-# printer install
-while true; do
-    read -p 'do you want to install a printer y or n?' printer
 
-    case $printer in
-        [yY]* ) install_printer; break;;
-        [nN]* ) break;;
-        * ) echo 'Plase answer y or n';;
+# install apps
+while true; do
+    read -p 'do you want to make "full" or "light" install?' fl
+
+    case $fl in
+        [fullFull]* ) light; full; break;;
+        [lightLight]* ) light; break;;
+        * ) echo 'Please answer full or light';;
     esac
 done
 
@@ -51,3 +40,88 @@ install_printer() {
     sudo systemctl enable org.cups.cupsd.service
     sudo systemctl start org.cups.cupsd.service
 }
+
+# enable daemons
+enable_daemons() {
+    sudo systemctl enable fstrim.timer
+    sudo systemctl enable systemd-timesyncd
+    sudo systemctl start systemd-timesyncd
+    sudo systemctl enable clamav-freshclam.service
+    sudo systemctl enable clamav-daemon.service
+}
+enable_daemons
+
+# install bash
+prepare_bash() {
+    git clone https://github.com/petobens/trueline ~/.trueline
+    echo 'source ~/.trueline/trueline.sh' >> ~/.bashrc
+    echo 'source ~/.dotfiles/bash/aliases' >> ~/.bashrc
+    chsh -s /bin/bash
+}
+
+# printer install
+while true; do
+    read -p 'do you want to install a printer y or n?' printeryn
+
+    case $printeryn in
+        [yY]* ) install_printer; break;;
+        [nN]* ) break;;
+        * ) echo 'Plase answer y or n';;
+    esac
+done
+
+# prepare directories
+prepare_dirs() {
+    mkdir -p ~/Work/Repositories
+    mkdir -p ~/Work/Material
+    mkdir -p ~/GDrive
+}
+prepare_dirs
+
+# setup UI
+prepare_ui() {
+    dirs=$(find . -maxdepth 1 -mindepth 1 -type d -not -name '.git' -print)
+    for dir in $dirs; do
+        echo "Installing ${dir}..."
+        cd "$dir" || exit
+        ./install.sh
+        cd ..
+    done
+}
+prepare_ui
+
+# prepare sncli
+prepare_sncli() {
+    ln -sft ~/.dotfiles/sncli/.snclirc ~/.snclirc
+}
+prepare_sncli
+
+# install macOS
+install_macos() {
+    git clone git@github.com:matteocrippa/macos-kvm.git ~/Vm/macOS
+    cd ~/Vm/macOS
+    ./install.sh
+}
+
+while true; do
+    read -p 'do you want to install a macOS y or n?' macosyn
+
+    case $macosyn in
+        [yY]* ) install_macos; break;;
+        [nN]* ) break;;
+        * ) echo 'Plase answer y or n';;
+    esac
+done
+
+# setup google drive
+setup_gdrive() {
+    export GDRIVE_DIR="GDrive"
+    cd ~/${GDRIVE_DIR}
+    grive -a
+    sudo systemctl --user enable grive-timer@$(systemd-escape ${GDRIVE_DIR}).timer
+    sudo systemctl --user start grive-timer@$(systemd-escape ${GDRIVE_DIR}).timer
+    sudo systemctl --user enable grive-changes@$(systemd-escape ${GDRIVE_DIR}).service
+    sudo systemctl --user start grive-changes@$(systemd-escape ${GDRIVE_DIR}).service
+    cd ~
+}
+setup_gdrive

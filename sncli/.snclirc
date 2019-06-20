@@ -1,0 +1,16 @@
+[sncli]
+cfg_sn_username = 
+cfg_sn_password = 
+
+# see http://urwid.org/manual/userinput.html for examples of more key combinations
+kb_edit_note = space
+kb_page_down = ctrl f
+# note that values must not be quoted
+clr_note_focus_bg = light blue
+
+# if this editor config value is not provided, the $EDITOR env var will be used instead
+# warning: if neither $EDITOR or cfg_editor is set, it will be impossible to edit notes
+cfg_editor = nvim
+
+# this is also supported for the pager:
+cfg_pager = less -c +{line} -N {fname}

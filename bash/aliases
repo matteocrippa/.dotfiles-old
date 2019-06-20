@@ -1,0 +1,14 @@
+# System alias
+alias cp="cp -i"
+alias df="df -h"
+alias free="free -m"
+alias vi="nvim"
+
+# Monitor handler
+alias monitor="sh ~/.dotfiles/helpers/monitor.sh"
+
+# Git
+alias gitu="git add . && git commit && git push"
+
+# MacOS Alias
+alias macos="sh ~/Vm/macOS/run.sh"
