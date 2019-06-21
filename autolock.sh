@@ -18,7 +18,7 @@ _suspender() {
         ;;
         adp)
             pgrep xautolock > /dev/null && pkill xautolock
-	    xset s on; xset s 600
+            xset s on; xset s 600
             xset dpms 0 0 900
             xautolock -time 30 -locker "systemctl suspend" &
         ;;
