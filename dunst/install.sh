@@ -2,4 +2,4 @@
 
 yay -Sy dunst
 
-ln -sfT "$HOME/.dotfiles/dunst/dunstrc" "$HOME/.config/dunst/dunstrc"
+ln -sfT ~/.dotfiles/dunst/dunstrc ~/.config/dunst/dunstrc
