@@ -78,7 +78,7 @@ prepare_dirs() {
     mkdir -p ~/Work/Material
     mkdir -p ~/GDrive
 }
-prepare_dirs
+#prepare_dirs
 
 # setup UI
 prepare_ui() {
@@ -96,7 +96,7 @@ prepare_ui
 prepare_sncli() {
     ln -sft ~/.dotfiles/sncli/snclirc ~/.snclirc
 }
-prepare_sncli
+#prepare_sncli
 
 # install macOS
 install_macos() {
