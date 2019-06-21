@@ -37,7 +37,6 @@ export LIGHT=(
   mailspring
   tusk
   gitahead
-  charles
   insomnia
   vlc
   arandr
@@ -89,6 +88,7 @@ export FULL=(
     intellij-idea-ultimate-edition
     docker
     kitematic
+    charles
 
     # coding
     flutter
