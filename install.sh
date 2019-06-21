@@ -58,6 +58,7 @@ prepare_bash() {
     echo 'source ~/.dotfiles/bash/aliases' >> ~/.bashrc
     chsh -s /bin/bash
 }
+prepare_bash
 
 # printer install
 while true; do
