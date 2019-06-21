@@ -54,6 +54,8 @@ enable_daemons() {
 
 # install bash
 prepare_bash() {
+    yay -Sy terminess-powerline-font-git
+    echo 'FONT=ter-powerline-v32n' | sudo tee /etc/vconsole.conf
     git clone https://github.com/petobens/trueline ~/.trueline
     echo 'source ~/.trueline/trueline.sh' >> ~/.bashrc
     echo 'source ~/.dotfiles/bash/aliases' >> ~/.bashrc
