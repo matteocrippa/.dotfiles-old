@@ -25,7 +25,7 @@ _suspender() {
     esac
 }
 
-if cat /sys/class/power_supply/AC/online | grep 0 > /dev/null 2>&1
+if cat /sys/class/power_supply/ADP1/online | grep 0 > /dev/null 2>&1
 then
     _suspender bat
 else
