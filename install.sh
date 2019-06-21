@@ -114,6 +114,25 @@ while true; do
     esac
 done
 
+# install gestures
+install_gestures() {
+    yay -Sy libinput-gestures
+    sudo gpasswd -a $USER input
+    ln -sfT ~/.dotfiles/config/libinput-gestures.conf ~/.config/libinput-gestures.conf
+    libinput-gestures-setup autostart
+    libinput-gestures-setup start
+}
+
+while true; do
+    read -p 'do you want to install gestures y or n? ' gesturesyn
+
+    case $gesturesyn in
+        [yY]* ) install_gestures; break;;
+        [nN]* ) break;;
+        * ) echo 'Please answer y or n';;
+    esac
+done
+
 # setup google drive
 setup_gdrive() {
     export GDRIVE_DIR="GDrive"
