@@ -212,7 +212,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Set shut down, restart and locking features
 bindsym $mod+Shift+Escape mode "$mode_system"
 set $Locker i3lock-fancy -g -p -- scrot -z
-set $LockSuspend $Locker && systemctl suspend
+set $LockSuspend i3lock-fancy -g -p -- scrot -z && sleep1 && systemctl suspend
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
