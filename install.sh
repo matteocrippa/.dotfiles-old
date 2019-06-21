@@ -25,11 +25,11 @@ full() {
 
 # install apps
 while true; do
-    read -p 'do you want to make "full" or "light" install? ' fl
+    read -p 'do you want to make "(f)ull" or "(l)ight" install? ' fl
 
     case $fl in
-        [full]* ) light; full; break;;
-        [light]* ) light; break;;
+        [fF]* ) light; full; break;;
+        [lL]* ) light; break;;
         * ) echo 'Please answer full or light';;
     esac
 done
