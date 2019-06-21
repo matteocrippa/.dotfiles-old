@@ -211,7 +211,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Set shut down, restart and locking features
 bindsym $mod+Shift+Escape mode "$mode_system"
-set $Locker i3lock-fancy -g -p -- scrot -z 
+set $Locker i3lock-fancy -g -p -- scrot -z
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -220,7 +220,7 @@ mode "$mode_system" {
     bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -242,7 +242,7 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+Escape exec --no-startup-id blurlock
+bindsym $mod+Escape exec --no-startup-id $Locker
 
 # Autostart applications
 exec --no-startup-id mailspring
@@ -256,7 +256,8 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
-exec --no-startup-id xautolock -time 10 -locker blurlock
+exec_always --no-startup-id xautolock -time 10 -locker $Locker
+exec_always --no-startup-id xautolock -time 15 -locker "systemctl suspend" -detectsleep
 exec --no-startup-id ~/.dotfiles/polybar/polybarlaunch.sh
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id ~/.dotfiles/i3wm/naturalScrollOn.sh
