@@ -256,8 +256,7 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
-exec_always --no-startup-id xautolock -time 10 -locker $Locker
-exec_always --no-startup-id xautolock -time 15 -locker "systemctl suspend" -detectsleep
+exec --no-startup-id xautolock -time 15 -locker "$Locker && systemctl suspend" -detectsleep
 exec --no-startup-id ~/.dotfiles/polybar/polybarlaunch.sh
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id ~/.dotfiles/i3wm/naturalScrollOn.sh
