@@ -25,17 +25,17 @@ full() {
 
 # install apps
 while true; do
-    read -p 'do you want to make "full" or "light" install?' fl
+    read -p 'do you want to make "full" or "light" install? ' fl
 
     case $fl in
-        [fullFull]* ) light; full; break;;
-        [lightLight]* ) light; break;;
+        [full]* ) light; full; break;;
+        [light]* ) light; break;;
         * ) echo 'Please answer full or light';;
     esac
 done
 
 install_printer() {
-    yay -Sy sane brother-dcp1610w cups brscan4 simple-scan-git system-config-printer
+    yay -Sy sane brother-dcp1610w cups brscan4 simple-scan-git system-config-printer --needed --noconfirm
     sudo brsaneconfig4 -a name="Brother" model="DCP1610W" ip=192.168.0.16
     sudo systemctl enable org.cups.cupsd.service
     sudo systemctl start org.cups.cupsd.service

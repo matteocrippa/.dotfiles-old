@@ -43,7 +43,6 @@ export LIGHT=(
   arandr
   pcmanfm
   deja-dup
-  #manjaro-settings-manager
   kapow
   gufw
   pdfsam
