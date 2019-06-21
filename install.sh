@@ -25,11 +25,12 @@ full() {
 
 # install apps
 while true; do
-    read -p 'do you want to make "(f)ull" or "(l)ight" install? ' fl
+    read -p 'do you want to make "(f)ull" or "(l)ight" [or (s)kip] install? ' fl
 
     case $fl in
         [fF]* ) light; full; break;;
         [lL]* ) light; break;;
+        [sS]* ) break;;
         * ) echo 'Please answer full or light';;
     esac
 done
@@ -49,7 +50,7 @@ enable_daemons() {
     sudo systemctl enable clamav-freshclam.service
     sudo systemctl enable clamav-daemon.service
 }
-enable_daemons
+#enable_daemons
 
 # install bash
 prepare_bash() {
@@ -93,7 +94,7 @@ prepare_ui
 
 # prepare sncli
 prepare_sncli() {
-    ln -sft ~/.dotfiles/sncli/.snclirc ~/.snclirc
+    ln -sft ~/.dotfiles/sncli/snclirc ~/.snclirc
 }
 prepare_sncli
 
@@ -144,4 +145,4 @@ setup_gdrive() {
     sudo systemctl --user start grive-changes@$(systemd-escape ${GDRIVE_DIR}).service
     cd ~
 }
-setup_gdrive
+#setup_gdrive
