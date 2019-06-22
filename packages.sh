@@ -79,7 +79,6 @@ export FULL=(
 
     # apps
     gimp
-    wireshark-qt
     inkscape
     android-studio
     intellij-idea-ultimate-edition
