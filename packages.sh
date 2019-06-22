@@ -13,7 +13,6 @@ export LIGHT=(
   nitrogen-git
   rofi
   rofi-calc
-  dunst
   xautolock
 
   # utils
@@ -35,9 +34,6 @@ export LIGHT=(
   clipit
   enpass-bin
   mailspring
-  tusk
-  gitahead
-  insomnia
   vlc
   arandr
   pcmanfm
@@ -89,6 +85,9 @@ export FULL=(
     docker
     kitematic
     charles
+    kapow
+    gitahead
+    insomnia
 
     # coding
     flutter
