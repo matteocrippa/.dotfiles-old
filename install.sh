@@ -97,9 +97,9 @@ enable_daemons
 
 # prepare directories
 prepare_dirs() {
-    mkdir -p ~/Work/Repositories
-    mkdir -p ~/Work/Material
-    mkdir -p ~/GDrive
+    mkdir -p ~/work/repositories
+    mkdir -p ~/work/material
+    mkdir -p ~/gdrive
 }
 prepare_dirs
 
@@ -111,8 +111,8 @@ prepare_sncli
 
 # install macOS
 install_macos() {
-    git clone git@github.com:matteocrippa/macos-kvm.git ~/Vm/macOS
-    cd ~/Vm/macOS
+    git clone git@github.com:matteocrippa/macos-kvm.git ~/vm/macos
+    cd ~/vm/macos
     ./install.sh
 }
 
@@ -147,7 +147,7 @@ done
 
 # setup google drive
 setup_gdrive() {
-    export GDRIVE_DIR="GDrive"
+    export GDRIVE_DIR="gdrive"
     cd ~/${GDRIVE_DIR}
     grive -a
     sudo systemctl --user enable grive-timer@$(systemd-escape ${GDRIVE_DIR}).timer
