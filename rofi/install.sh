@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yay -Sy rofi
+yay -Sy rofi --needed --noconfirm
 
 mkdir -p ~/.config/rofi
 ln -sfT ~/.dotfiles/rofi/config ~/.config/rofi/config
