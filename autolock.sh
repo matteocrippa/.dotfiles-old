@@ -57,8 +57,7 @@ case "$cmd" in
     dunst stop
 
     # Fork both i3lock and its monitor to avoid blocking xautolock.
-    i3lock --ignore-empty-password --beep --inactivity-timeout=10 \
-      --image="$XDG_CONFIG_HOME/i3/i3lock-img" --nofork &
+    i3lock-fancy -g -p -- scrot -z &
 
     pid="$!"
     log "Waiting for PID $pid to end..."
