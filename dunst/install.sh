@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yay -Sy dunst
+yay -Sy dunst --needed --noconfirm
 
 rm -Rf ~/.config/dunst
 mkdir ~/.config/dunst

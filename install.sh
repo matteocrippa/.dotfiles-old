@@ -3,9 +3,6 @@
 # import packages
 . packages.sh
 
-# setup insternet
-nmtui
-
 # start x
 if ! xset q &>/dev/null; then
     echo "No X server at \$DISPLAY [$DISPLAY]" >&2
@@ -128,7 +125,7 @@ done
 
 # install gestures
 install_gestures() {
-    yay -Sy libinput-gestures
+    yay -Sy libinput-gestures --needed --noconfirm
     sudo gpasswd -a $USER input
     ln -sfT ~/.dotfiles/config/libinput-gestures.conf ~/.config/libinput-gestures.conf
     libinput-gestures-setup autostart

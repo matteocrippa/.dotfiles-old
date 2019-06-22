@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yay -Sy neovim python2-neovim python-neovim
+yay -Sy neovim python2-neovim python-neovim --needed --noconfirm
 
 yay -Sy nodejs-neovim --needed --noconfirm
 

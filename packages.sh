@@ -43,6 +43,7 @@ export LIGHT=(
   pdfsam
 
   # system
+  bc
   bind-tools
   net-tools
   nmap
