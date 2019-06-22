@@ -1,3 +1,14 @@
+Xautolock.time: 30
+Xautolock.locker: ~/.dotfiles/autolock.sh lock
+Xautolock.killtime: 30
+Xautolock.killer: ~/.dotfiles/autolock.sh suspend
+Xautolock.notify: 30
+Xautolock.notifier: ~/.dotfiles/autolock.sh notify
+Xautolock.detectsleep: true
+Xautolock.secure: true
+Xautolock.noclose: true
+
+
 Xft.dpi:       96
 Xft.antialias: true
 Xft.hinting:   true

@@ -1,35 +1,101 @@
 #!/bin/sh
 
-# start me in your autostart, e.g. .xinitrc
+set -eu
 
-[[ ! -f /usr/bin/xautolock ]] && echo "xuatolock is required" && exit 0
-[[ ! -f /usr/bin/xset ]] && echo "xset is required" && exit 0
+# This script is intended to be run as the xautolock locker and notifier.
+# It requires i3lock, and dunst is optional.
 
-_suspender() {
-    case $1 in
-        bat)
-            pgrep xautolock > /dev/null && pkill xautolock
-            # lock after 5 minutes
-            xset s on; xset s 300
-            # screen off after 10 minutes
-            xset dpms 0 0 600
-            # suspend after 15 minutes
-            xautolock -time 15 -locker "systemctl suspend" &
-        ;;
-        adp)
-            pgrep xautolock > /dev/null && pkill xautolock
-            xset s on; xset s 600
-            xset dpms 0 0 900
-            xautolock -time 30 -locker "systemctl suspend" &
-        ;;
-    esac
+# Copy or link this script as /usr/bin/slock to let xfce4-session run it.
+if [ "$(basename "$0")" = "slock" ]; then
+  cmd=lock
+else
+  cmd=${1:-lock}
+fi
+
+# Is the screen already locked?
+locked() { pkill -0 --euid "$(id -u)" --exact i3lock; }
+
+# Return 0 if suspend is acceptable.
+suspend_ok() {
+  [ -n "$(2>/dev/null mpc current)" ] && return 1
+  return 0
 }
 
-if cat /sys/class/power_supply/ADP1/online | grep 0 > /dev/null 2>&1
-then
-    _suspender bat
-else
-    _suspender adp
-fi
-exit 0
+# Print the given message with a timestamp.
+info() { printf '%s\t%s\n' "$(date)" "$*"; }
 
+log() {
+  if [ -n "${LOCK_LOG:-}" ]; then
+    info >>"$LOCK_LOG" "$@"
+  else
+    info "$@"
+  fi
+}
+
+# Control the dunst daemon, if it is running.
+dunst() {
+  pkill -0 --exact dunst || return 0
+
+  case ${1:-} in
+    stop)
+      log "Stopping notifications and locking screen."
+      pkill -USR1 --euid "$(id -u)" --exact dunst
+      ;;
+    resume)
+      log "...Resuming notifications."
+      pkill -USR2 --euid "$(id -u)" --exact dunst
+      ;;
+    *)
+      echo "dunst argument required: stop or resume"
+      return 1
+      ;;
+  esac
+}
+
+case "$cmd" in
+  lock)
+    dunst stop
+
+    # Fork both i3lock and its monitor to avoid blocking xautolock.
+    i3lock --ignore-empty-password --beep --inactivity-timeout=10 \
+      --image="$XDG_CONFIG_HOME/i3/i3lock-img" --nofork &
+
+    pid="$!"
+    log "Waiting for PID $pid to end..."
+    while 2>/dev/null kill -0 "$pid"; do
+      sleep 1
+    done
+
+    dunst resume
+    ;;
+
+  notify)
+    # Notification should not be issued while locked even if dunst is paused.
+    locked && exit
+
+    log "Sending notification."
+    # grep finds either Xautolock.notify or Xautolock*notify
+    secs="$(xrdb -query | grep -m1 '^Xautolock.notify' | cut -f2)"
+    test -n "$secs" && secs="Locking in $secs seconds"
+
+    notify-send --urgency="normal" --app-name="xautolock" \
+      --icon='/usr/share/icons/Adwaita/48x48/actions/system-lock-screen.png' \
+      -- "Screen Lock" "$secs"
+    ;;
+
+  suspend)
+    if suspend_ok; then
+      log "Suspending system."
+      systemctl suspend
+    else
+      log "Deferring suspend."
+    fi
+    ;;
+
+  debug)
+    log "$@"
+    ;;
+
+  *)
+    log "Unrecognized option: $1"
+esac
