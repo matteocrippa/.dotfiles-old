@@ -66,13 +66,7 @@ battery_print() {
       power=$(cat /sys/class/power_supply/BAT0/power_now)
     fi
     bat0_energy=$(cat /sys/class/power_supply/BAT0/energy_now)
-
-    if [ -f /sys/class/power_supply/BAT1/energy_now ]; then
     bat1_energy=$(cat /sys/class/power_supply/BAT1/energy_now)
-    else
-    bat1_energy=0
-    fi
-
     total_energy=$(bc -l <<< "$bat0_energy + $bat1_energy")
     hours=$(bc <<< "$total_energy/$power" | cut -c1-4)"hs"
     hours_discrete=$(bc <<< "$total_energy/$power")
@@ -100,7 +94,7 @@ battery_print() {
 
 case "$1" in
   --update)
-    pid="~/.dotfiles/polybar/battery-combined-udev.pid"
+    pid="~/.spells/polybar/battery-combined-udev.pid"
     if [ "$pid" != "" ]; then
       kill -10 "$pid"
     fi
