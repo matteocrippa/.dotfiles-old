@@ -12,3 +12,5 @@ ln -sfT ~/.dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 
 ln -sfT ~/.dotfiles/nvim/ftplugin ~/.config/nvim/ftplugin
 
+yay -Sy the_silver_searcher
+
