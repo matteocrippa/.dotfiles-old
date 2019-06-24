@@ -98,7 +98,7 @@ enable_daemons
 prepare_dirs() {
     mkdir -p ~/Work/Repositories
     mkdir -p ~/Work/Material
-    mkdir -p ~/${GDRIVE_DIR}
+    mkdir -p ~/GDrive
 }
 prepare_dirs
 
@@ -146,12 +146,12 @@ done
 
 # setup google drive
 setup_gdrive() {
-    cd ~/${GDRIVE_DIR}
+    cd ~/GDrive
     grive -a
-    sudo systemctl --user enable grive-timer@$(systemd-escape ${GDRIVE_DIR}).timer
-    sudo systemctl --user start grive-timer@$(systemd-escape ${GDRIVE_DIR}).timer
-    sudo systemctl --user enable grive-changes@$(systemd-escape ${GDRIVE_DIR}).service
-    sudo systemctl --user start grive-changes@$(systemd-escape ${GDRIVE_DIR}).service
+    systemctl --user enable grive-timer@$(systemd-escape GDrive}).timer
+    systemctl --user start grive-timer@$(systemd-escape GDrive}).timer
+    systemctl --user enable grive-changes@$(systemd-escape GDrive).service
+    systemctl --user start grive-changes@$(systemd-escape GDrive).service
     cd ~
 }
 setup_gdrive
