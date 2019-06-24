@@ -260,7 +260,6 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id ~/.dotfiles/polybar/polybarlaunch.sh
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id ~/.dotfiles/i3/naturalScrollOn.sh
-exec_always --no-startup_id ~/.dotfiles/autolock.sh
 exec_always --no-startup-id libinput-gestures-setup start
 exec --no-startup-id alacritty -t sncli -e sncli
 
