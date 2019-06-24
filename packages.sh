@@ -89,6 +89,7 @@ export FULL=(
     kapow
     gitahead
     insomnia
+    mongodb-compass
 
     # coding
     flutter
