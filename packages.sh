@@ -41,6 +41,8 @@ export LIGHT=(
   kapow
   gufw
   pdfsam
+  mupdf
+  mdproof
 
   # system
   bc
