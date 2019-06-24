@@ -70,6 +70,7 @@ export LIGHT=(
   powertop
   alacritty
   xscreensaver
+  alsamixer.app
 
   # coding
   nodejs
