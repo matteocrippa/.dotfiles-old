@@ -11,4 +11,4 @@ alias monitor="sh ~/.dotfiles/helpers/monitor.sh"
 alias gitu="git add . && git commit && git push"
 
 # MacOS Alias
-alias macos="sh ~/Vm/macOS/run.sh"
+alias macos="sh ~/vm/macos/run.sh"
