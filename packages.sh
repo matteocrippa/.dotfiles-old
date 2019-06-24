@@ -73,7 +73,7 @@ export LIGHT=(
   alacritty
   xscreensaver
   alsamixer.app
-  i3scrot-git
+  i3-scrot
 
   # coding
   nodejs
