@@ -43,8 +43,7 @@ export LIGHT=(
   pdfsam
   mupdf
   mdproof
-  remmina
-  remmina-plugin-ultravnc
+  vinagre
 
   # system
   bc
