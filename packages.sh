@@ -74,6 +74,7 @@ export LIGHT=(
   xscreensaver
   alsamixer.app
   i3-scrot
+  xorg-xinput
 
   # coding
   nodejs
