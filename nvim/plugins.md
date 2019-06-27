@@ -142,8 +142,6 @@ Plug 'vim-scripts/calendar.vim--Matsumoto'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'git-time-metric/gtm-vim-plugin'
-let g:gtm_plugin_status_enabled = 1
 
 " NERDTree
 Plug 'scrooloose/nerdtree'
