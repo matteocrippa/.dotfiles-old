@@ -96,6 +96,10 @@ export FULL=(
     insomnia
     mongodb-compass
 
+    # network
+    bettercap
+    wireless_tools
+
     # coding
     flutter
 )
