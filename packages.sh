@@ -40,7 +40,6 @@ export LIGHT=(
   arandr
   pcmanfm
   deja-dup
-  kapow
   gufw
   pdfsam
   mupdf
