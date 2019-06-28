@@ -28,6 +28,8 @@ export LIGHT=(
   sc
   clamav
   sncli-git
+  speed-test
+  wavemon
 
   # apps x
   firefox
@@ -91,10 +93,11 @@ export FULL=(
     docker
     kitematic
     charles
-    kapow
+    dxtime
     gitahead
     insomnia
     mongodb-compass
+    libreoffice-fresh
 
     # network
     bettercap
