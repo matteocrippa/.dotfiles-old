@@ -79,6 +79,7 @@ export LIGHT=(
   xorg-xinput
   samba
   system-config-samba
+  gvfs-smb
 
   # coding
   nodejs
