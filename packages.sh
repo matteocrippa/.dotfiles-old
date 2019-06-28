@@ -99,6 +99,7 @@ export FULL=(
     # network
     bettercap
     wireless_tools
+    aircrack-ng
 
     # coding
     flutter
