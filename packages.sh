@@ -77,6 +77,8 @@ export LIGHT=(
   alsamixer.app
   i3-scrot
   xorg-xinput
+  samba
+  system-config-samba
 
   # coding
   nodejs
