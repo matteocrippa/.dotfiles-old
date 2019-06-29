@@ -156,5 +156,24 @@ setup_gdrive() {
 }
 setup_gdrive
 
+# setup dnscrypt
+setup_dnscrypt() {
+    yay -Sy dnscrypt-proxy ubound --needed --noconfirm
+    echo "nameserver ::1" | sudo tee /etc/resolv.conf
+    echo "nameserver 127.0.0.1" | sudo tee -a /etc/resolv.conf
+    echo "options edns0 single-request-reopen" | sudo tee -a /etc/resolv.conf
+    sudo chattr +i /etc/resolv.conf
+    echo "options server_names = ['adguard-dns-doh', 'adguard-dns']" | sudo tee -a /etc/dnscrypt-proxy/dnscrypt-proxy.toml
+    systemctl enable dnscrypt-proxy.service
+    systemctl start dnscrypt-proxy.service
+    echo "  do-not-query-localhost: no" | sudo tee -a /etc/unbound/unbound.conf
+    echo "forward-zone:" | sudo tee -a /etc/unbound/unbound.conf
+    echo "name: \".\"" | sudo tee -a /etc/unbound/unbound.conf
+    echo "forward-addr: ::1@53000" | sudo tee -a /etc/unbound/unbound.conf
+    echo "forward-addr: 127.0.0.1@53000" | sudo tee -a /etc/unbound/unbound.conf
+    yay -Sy dnscrypt-autoinstall --needed --noconfirm
+}
+setup_dnscrypt
+
 # cleanup
 yay -Yc
