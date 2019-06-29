@@ -80,6 +80,7 @@ export LIGHT=(
   samba
   system-config-samba
   gvfs-smb
+  arch-audit
 
   # coding
   nodejs

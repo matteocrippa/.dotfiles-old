@@ -175,5 +175,12 @@ setup_dnscrypt() {
 }
 setup_dnscrypt
 
+setup_fail2ban() {
+    yay -Sy fail2ban
+    systemctl enable fail2ban.service
+    systemctl start fail2ban.service
+}
+setup_fail2ban
+
 # cleanup
 yay -Yc
