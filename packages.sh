@@ -43,9 +43,9 @@ export LIGHT=(
   deja-dup
   gufw
   pdfsam
-  mupdf
   mdproof
   vinagre
+  evince
 
   # system
   bc
