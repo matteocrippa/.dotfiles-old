@@ -35,7 +35,7 @@ export LIGHT=(
   firefox
   clipit
   enpass-bin
-  mailspring
+  thunderbird
   vlc
   arandr
   pcmanfm
