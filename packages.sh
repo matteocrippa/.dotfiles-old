@@ -30,6 +30,7 @@ export LIGHT=(
   sncli-git
   speed-test
   wavemon
+  cpupower
 
   # apps x
   firefox
