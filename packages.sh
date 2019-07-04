@@ -43,7 +43,7 @@ export LIGHT=(
   deja-dup
   gufw
   pdfsam
-  mdproof
+  mdproof # markdown 2 pdf
   vinagre
   evince
 
