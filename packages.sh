@@ -31,6 +31,7 @@ export LIGHT=(
   speed-test
   wavemon
   cpupower
+  zip
 
   # apps x
   firefox
