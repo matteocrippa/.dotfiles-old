@@ -92,8 +92,8 @@ export LIGHT=(
 export FULL=(
 
     # apps
-    gimp
-    inkscape
+    krita
+    shotcut
     android-studio
     intellij-idea-ultimate-edition
     docker
