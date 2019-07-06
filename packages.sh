@@ -47,6 +47,7 @@ export LIGHT=(
   mdproof # markdown 2 pdf
   vinagre
   evince
+  xarchiver
 
   # system
   bc
