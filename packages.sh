@@ -93,6 +93,7 @@ export FULL=(
 
     # apps
     krita
+    libheif
     shotcut
     android-studio
     intellij-idea-ultimate-edition
