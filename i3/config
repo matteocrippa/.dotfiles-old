@@ -254,7 +254,6 @@ bindsym $mod+Escape exec --no-startup-id $Locker
 exec --no-startup-id thunderbird
 exec --no-startup-id enpass
 exec --no-startup-id dxtime
-exec --no-startup-id kapow ~/GDrive/Work/Timetracking/kapow.xml
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
@@ -265,6 +264,7 @@ exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id ~/.dotfiles/i3/naturalScrollOn.sh
 exec_always --no-startup-id libinput-gestures-setup start
 exec --no-startup-id alacritty -t sncli -e sncli
+exec --no-startup-id xfce4-power-manager
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
