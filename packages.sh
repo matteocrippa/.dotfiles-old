@@ -84,6 +84,7 @@ export LIGHT=(
   system-config-samba
   gvfs-smb
   arch-audit
+  xfce4-power-manager
 
   # coding
   nodejs
