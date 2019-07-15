@@ -172,6 +172,7 @@ assign [class="Firefox"] $ws3
 assign [class="jetbrains-idea"]  $ws4
 assign [class="jetbrains-studio"] $ws5
 assign [class="Spicy"] $ws6
+assign [class="Virtualbox Manager"] $ws6
 assign [class="Steam"] $ws0
 
 # Open specific applications in floating mode
