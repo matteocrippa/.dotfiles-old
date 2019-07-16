@@ -37,6 +37,7 @@ export LIGHT=(
   firefox
   clipit
   enpass-bin
+  keepassxc
   thunderbird
   vlc
   arandr
