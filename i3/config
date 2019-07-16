@@ -201,8 +201,6 @@ for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="Xfburn"] floating enable
-for_window [instance="Enpass"] move to scratchpad
-for_window [instance="Enpass Assitant"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -267,7 +265,7 @@ exec_always --no-startup-id ~/.dotfiles/i3/naturalScrollOn.sh
 exec_always --no-startup-id libinput-gestures-setup start
 exec --no-startup-id alacritty -t sncli -e sncli
 exec --no-startup-id xfce4-power-manager
-
+exec --no-startup-id keepassxc
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources
