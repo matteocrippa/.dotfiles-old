@@ -87,6 +87,9 @@ export LIGHT=(
   arch-audit
   xfce4-power-manager
 
+  #security
+  prey-node-client
+
   # coding
   nodejs
 )
