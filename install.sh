@@ -182,5 +182,7 @@ setup_fail2ban() {
 }
 setup_fail2ban
 
+sh ./scripts/prey-setup.sh
+
 # cleanup
 yay -Yc
