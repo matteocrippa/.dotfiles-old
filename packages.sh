@@ -14,6 +14,7 @@ export LIGHT=(
   rofi
   rofi-calc
   xautolock
+  arc-gtk-theme
 
   # utils
   unzip
@@ -32,6 +33,7 @@ export LIGHT=(
   wavemon
   cpupower
   zip
+  exa
 
   # apps x
   firefox
