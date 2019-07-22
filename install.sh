@@ -182,7 +182,13 @@ setup_fail2ban() {
 }
 setup_fail2ban
 
+# force set caps as modifier
+setxkbmap -option compose:caps
+
+# setup prey security
 sh ./scripts/prey-setup.sh
+
+
 
 # cleanup
 yay -Yc
