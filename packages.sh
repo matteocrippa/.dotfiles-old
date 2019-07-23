@@ -34,6 +34,7 @@ export LIGHT=(
   cpupower
   zip
   exa
+  tlp
 
   # apps x
   firefox
