@@ -266,6 +266,7 @@ exec_always --no-startup-id libinput-gestures-setup start
 exec --no-startup-id alacritty -t sncli -e sncli
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id keepassxc
+exec_always --no-startup-id setxkbmap -option compose:caps
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources
