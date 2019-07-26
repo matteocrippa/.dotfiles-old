@@ -56,6 +56,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'RRethy/vim-illuminate'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'coldfix/hexHighlight'
 ```
 
 ### Auto-completions
