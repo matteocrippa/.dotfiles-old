@@ -1,4 +1,4 @@
-# i3 config file (v4)
+# i3 config file (v1)
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -264,9 +264,10 @@ exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id ~/.dotfiles/i3/naturalScrollOn.sh
 exec_always --no-startup-id libinput-gestures-setup start
 exec --no-startup-id alacritty -t sncli -e sncli
-exec --no-startup-id xfce4-power-manager
 exec --no-startup-id keepassxc
 exec_always --no-startup-id setxkbmap -option compose:caps
+exec --no-startup-id ~/.dotfiles/scripts/lock.sh
+
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources
