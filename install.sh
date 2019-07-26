@@ -183,13 +183,14 @@ setup_fail2ban() {
 }
 setup_fail2ban
 
-# force set caps as modifier
-setxkbmap -option compose:caps
-
 # setup prey security
 sh ./scripts/prey-setup.sh
 
-
+# setup git
+setup_git() {
+    git config --global user.email matteocrippa@users.noreply.github.com
+    git config --global user.name matteocrippa
+}
 
 # cleanup
 yay -Yc
