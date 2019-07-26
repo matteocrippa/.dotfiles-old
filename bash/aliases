@@ -5,8 +5,10 @@ alias free="free -m"
 alias vi="nvim"
 
 # Monitor handler
-alias monitor="sh ~/.dotfiles/helpers/monitor.sh"
+alias monitor="sh ~/.dotfiles/scripts/monitor.sh"
 
 # Git
 alias gitu="git add . && git commit && git push"
 
+# Ls to exa
+alias ls="exa"

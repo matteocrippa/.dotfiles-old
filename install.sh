@@ -110,9 +110,7 @@ prepare_sncli
 
 # install macOS
 install_macos() {
-    git clone git@github.com:matteocrippa/macos-kvm.git ~/vm/macos
-    cd ~/Vm/MacOs
-    ./install.sh
+    sh ./scripts/macos.sh
 }
 
 while true; do
@@ -185,12 +183,6 @@ setup_fail2ban
 
 # setup prey security
 sh ./scripts/prey-setup.sh
-
-# setup git
-setup_git() {
-    git config --global user.email matteocrippa@users.noreply.github.com
-    git config --global user.name matteocrippa
-}
 
 # cleanup
 yay -Yc
