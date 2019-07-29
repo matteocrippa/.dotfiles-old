@@ -181,6 +181,18 @@ setup_fail2ban() {
 }
 setup_fail2ban
 
+# usbguard
+setup_usbguard() {
+    systemctl enable usbguard.service
+    systemctl start usbguard.service
+}
+setup_usbguard
+
+# firejail
+setup_firejail() {
+    sudo firecfg
+}
+
 # setup prey security
 sh ./scripts/prey-setup.sh
 
