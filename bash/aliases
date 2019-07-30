@@ -12,7 +12,3 @@ alias gitu="git add . && git commit && git push"
 
 # Ls to exa
 alias ls="exa"
-
-# firejail
-alias firefox="firejail firefox"
-alias thunderbird="firejail thunderbird"
