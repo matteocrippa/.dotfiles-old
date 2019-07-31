@@ -15,3 +15,7 @@ sudo ln -sfT ~/.dotfiles/config/tlp /etc/default/tlp
 sudo systemctl enable tlp
 sudo systemctl enable tlp-sleep.service
 sudo systemctl enable thermald
+
+# firejail 
+rm -Rf ~/.firejail
+ln -sFT ~/.dotfiles/config/firejail/ ~/.firejail
