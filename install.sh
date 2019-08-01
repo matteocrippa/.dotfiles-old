@@ -185,6 +185,9 @@ setup_fail2ban
 setup_usbguard() {
     systemctl enable usbguard.service
     systemctl start usbguard.service
+    sudo groupadd usbguard
+    sudo gpasswd -a $USER usbguard
+    sudo usbguard add-user -g usbguard --devices=modify,list,listen --policy=list --exceptions=listen
 }
 setup_usbguard
 

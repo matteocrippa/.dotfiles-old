@@ -266,7 +266,7 @@ exec --no-startup-id alacritty -t sncli -e sncli
 exec --no-startup-id keepassxc
 exec_always --no-startup-id setxkbmap -option compose:caps
 exec --no-startup-id ~/.dotfiles/scripts/lock.sh
-
+exec --no-startup-id usbguard-applet-qt
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources

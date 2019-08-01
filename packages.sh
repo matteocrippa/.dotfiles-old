@@ -90,6 +90,7 @@ export LIGHT=(
   arch-audit
   firejail
   usbguard
+  usbguard-qt
 
   #security
   prey-node-client
