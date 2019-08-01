@@ -201,3 +201,6 @@ sh ./scripts/prey-setup.sh
 
 # cleanup
 yay -Yc
+
+# disable root
+sudo passwd -l root
