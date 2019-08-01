@@ -8,3 +8,5 @@ Xautolock.detectsleep: true
 Xautolock.secure: true
 Xautolock.noclose: true
 
+Xcursor.size: 16
+Xcursor.theme: cursor-theme
