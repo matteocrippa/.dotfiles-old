@@ -20,6 +20,8 @@ function change_screen_to() {
     ;;
   esac
 
+  pkill -USR1 polybar
+
   echo "Changed to mode $1!"
   i3-msg restart
 }
