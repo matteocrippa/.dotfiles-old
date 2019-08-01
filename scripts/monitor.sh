@@ -2,31 +2,21 @@
 
 function display_help() {
   cat <<EOF
-        mode work // 2 screens expandido
-        mode chill // 1 screens
-        mode pitch // 2 screens expandido (apresentação)
-        mode demo // 2 screens mirror
+        mode dock // thinkpad dock
+        mode laptop // laptop screen only
 
         mode -h, --help
 
-        //TODO
-        remover notificações em modo pitch era capaz de ser bem jogadosage:
 EOF
 }
 
 function change_screen_to() {
   case $1 in
-  work)
-    xrandr --output HDMI1 --auto --right-of eDP1
+  dock)
+    xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal --output DP1 --off --output DP2 --off --output DP2-1 --off --output DP2-2 --off --output DP2-3 --mode 2560x1080 --pos 0x0 --rotate normal --output     HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
     ;;
-  chill)
-    xrandr --output HDMI1 --off
-    ;;
-  pitch)
-    xrandr --output HDMI1 --auto --right-of eDP1
-    ;;
-  demo)
-    xrandr --output HDMI1 --auto --same-as eDP1
+  laptop)
+    xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal --output DP1 --off --output DP2 --off --output DP2-1 --off --output DP2-2 --off --output DP2-3 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
     ;;
   esac
 
@@ -38,7 +28,7 @@ case $1 in
 -h | --help)
   display_help
   ;;
-work | chill | pitch | demo)
+dock | laptop )
   change_screen_to "$1"
   ;;
 *)
