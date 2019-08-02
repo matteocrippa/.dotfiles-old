@@ -35,6 +35,7 @@ export LIGHT=(
   zip
   exa
   tlp
+  pa-applet-git
 
   # apps x
   firefox
