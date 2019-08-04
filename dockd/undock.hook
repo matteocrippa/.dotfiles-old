@@ -1,5 +1,0 @@
-#!/bin/bash
-
-~/.dotfiles/scripts/docking.sh disable
-
-exit
