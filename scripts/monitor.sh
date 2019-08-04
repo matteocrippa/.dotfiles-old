@@ -21,7 +21,7 @@ function change_screen_to() {
   esac
 
   pkill -USR1 polybar
-
+  ~/.dotfiles/polybar/polybarlaunch.sh
   echo "Changed to mode $1!"
   i3-msg restart
 }
