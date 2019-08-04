@@ -126,7 +126,7 @@ set $ws6 "6:"
 set $ws7 7
 set $ws8 8
 set $ws9 9
-set $ws0 "0:"
+set $ws0 0
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -174,7 +174,6 @@ assign [class="jetbrains-studio"] $ws5
 assign [class="Spicy"] $ws6
 assign [class="VirtualBox Machine"] $ws6
 assign [class="VirtualBox Manager"] $ws6
-assign [class="Steam"] $ws0
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
