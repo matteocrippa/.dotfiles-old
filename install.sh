@@ -195,6 +195,13 @@ setup_usbguard
 setup_firejail() {
     sudo firecfg
 }
+setup_firejail
+
+# setup refind
+setup_refind() {
+    refind-install
+}
+setup_refind
 
 # setup prey security
 sh ./scripts/prey-setup.sh

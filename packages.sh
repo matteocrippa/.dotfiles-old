@@ -55,6 +55,7 @@ export LIGHT=(
   xarchiver
 
   # system
+  refind-efi
   bc
   bind-tools
   net-tools
