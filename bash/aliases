@@ -7,10 +7,6 @@ alias vi="nvim"
 # Monitor handler
 alias monitor="sh ~/.dotfiles/scripts/monitor.sh"
 
-# Dock handler
-alias docked="sh ~/.dotfiles/scripts/docking.sh enable"
-alias undocked="sh ~/..dotfiles/scripts/docking.sh disable"
-
 # Git
 alias gitu="git add . && git commit && git push"
 
