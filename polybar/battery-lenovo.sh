@@ -74,7 +74,7 @@ battery_print() {
     minutes=$(echo "scale=0; (($hours_float - $hours_discrete) * 60)/1" | bc)
     formatted_minutes=$(format_minutes $minutes)
     power_float=$(bc -l <<< "$power/1000000" | cut -c1-4)
-    remaining=${hours_discrete}h ${formatted_minutes}m
+    remaining="${hours_discrete}h ${formatted_minutes}m"
 
     if [ "$battery_percent" -gt 85 ]; then
       icon=""
@@ -94,7 +94,7 @@ battery_print() {
 
 case "$1" in
   --update)
-    pid="~/.spells/polybar/battery-combined-udev.pid"
+    pid="~/.dotfiles/polybar/battery-lenovo.pid"
     if [ "$pid" != "" ]; then
       kill -10 "$pid"
     fi
