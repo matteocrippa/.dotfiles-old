@@ -48,7 +48,7 @@ export LIGHT=(
   pcmanfm
   deja-dup
   gufw
-  pdfsam
+  pdfmerger
   mdproof # markdown 2 pdf
   vinagre
   evince
