@@ -118,6 +118,9 @@ export FULL=(
     mongodb-compass
     libreoffice-fresh
 
+    # virtual
+    vmware-workstage
+
     # network
     bettercap
     wireless_tools
