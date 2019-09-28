@@ -36,6 +36,7 @@ export LIGHT=(
   exa
   tlp
   pa-applet-git
+  trash-cli
 
   # apps x
   firefox
@@ -119,7 +120,7 @@ export FULL=(
     libreoffice-fresh
 
     # virtual
-    vmware-workstage
+    vmware-workspace14
 
     # network
     bettercap
