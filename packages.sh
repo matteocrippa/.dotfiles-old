@@ -94,6 +94,7 @@ export LIGHT=(
   firejail
   usbguard
   usbguard-qt
+  simplescreenrecorder
 
   #security
   prey-node-client
