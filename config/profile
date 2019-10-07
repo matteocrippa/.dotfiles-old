@@ -5,3 +5,4 @@ export EDITOR=/usr/bin/nvim
 export BROWSER=/usr/bin/firefox
 export TERM=/usr/bin/termite
 export GPG_TTY=$(tty)
+export PATH=$PATH:/home/matteo/Development/flutter/bin

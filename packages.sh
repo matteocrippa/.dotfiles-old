@@ -128,6 +128,4 @@ export FULL=(
     wireless_tools
     aircrack-ng
 
-    # coding
-    flutter
 )
