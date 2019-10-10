@@ -70,6 +70,7 @@ export LIGHT=(
   htop
   gtop
   scrot
+  lxsession
   bat
   neofetch
   tldr
