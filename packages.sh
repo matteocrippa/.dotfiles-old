@@ -50,7 +50,7 @@ export LIGHT=(
   deja-dup
   gufw
   pdfmerger
-  mdproof # markdown 2 pdf
+  text2pdf # text to pdf text2pdf file.txt > file.pdf
   vinagre
   evince
   xarchiver
