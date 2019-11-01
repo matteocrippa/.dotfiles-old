@@ -115,7 +115,7 @@ export FULL=(
     docker
     kitematic
     charles
-    dxtime
+    toggldesktop
     gitahead
     insomnia
     mongodb-compass
