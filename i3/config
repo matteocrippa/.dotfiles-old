@@ -166,7 +166,7 @@ bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
 
 # Open applications on specific workspaces
 assign [class="Thunderbird"] $ws1
-assign [class="Dxtime"] $ws2
+assign [class="Toggl Desktop"] $ws2
 assign [title="sncli"] $ws2
 assign [class="firefox"] $ws3
 assign [class="jetbrains-idea"]  $ws4
@@ -249,8 +249,8 @@ mode "resize" {
 bindsym $mod+Escape exec --no-startup-id $Locker
 
 # Autostart applications
+exec --no-startup-id firefox
 exec --no-startup-id thunderbird
-exec --no-startup-id rm ~/dxtime && dxtime
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
@@ -267,6 +267,7 @@ exec --no-startup-id ~/.dotfiles/scripts/lock.sh
 exec --no-startup-id usbguard-applet-qt
 exec --no-startup-id pa-applet
 exec --no-startup-id lxpolkit
+exec --no-startup-id TogglDesktop
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
