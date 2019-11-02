@@ -122,11 +122,13 @@ export FULL=(
     libreoffice-fresh
 
     # virtual
-    vmware-workspace14
+    vmware-workspace
 
     # network
     bettercap
     wireless_tools
     aircrack-ng
 
+    # 3d printer
+    mattercontrol
 )
